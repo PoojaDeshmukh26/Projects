@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web 18 Unit-2 C3</title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      #form{
+        display: grid;
+        height: 300px;
+        width: 30%;
+        gap:6px;
+        margin: auto;
+        border: 1px solid black;
+        padding: 20px;
+      }
+      #reports{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+        height: 200px;
+        gap: 10px;
+      }
+      #reports>div{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        text-align: center;
+        /* border: 1px solid red; */
+      }
+      #reports>div>button{
+        margin-bottom: 10px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div>
+        <h1>Masai Evaluations Tracker</h1>
+        <form id="form">
+            <!-- When this form get submitted update the DOM According to the question -->
+          <input placeholder="Name" id="name" type="text"  />
+          <select id="batch">
+            <option value="WEB16">WEB16</option>
+            <option value="WEB17">WEB17</option>
+            <option value="WEB18">WEB18</option>
+          </select>
+          <select id="type">
+            <option value="DSA">DSA</option>
+            <option value="Coding">Coding</option>
+          </select>
+          <input placeholder="Student Code" id="student_code" type="text" />
+          <select id="unit">
+            <option value="Unit-1">Unit-1</option>
+            <option value="Unit-2">Unit-2</option>
+            <option value="Unit-3">Unit-3</option>
+            <option value="Unit-4">Unit-4</option>
+          </select>
+          <select id="sprint">
+            <option value="Sprint-1">Sprint-1</option>
+            <option value="Sprint-2">Sprint-2</option>
+            <option value="Sprint-3">Sprint-3</option>
+            <option value="Sprint-4">Sprint-4</option>
+          </select>
+          <input placeholder="Score(0-10)" id="score" type="number" />
+          <input type="submit" />
+        </form>
+      </div>
+      <div id="reports">
+        <!-- All the cards that get appended with Javascript on form submit goes here -->
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let form = document.querySelector("form");
+  let reports=document.getElementById("reports");
+  let dataArr=[];
+  form.addEventListener("submit" ,function(event){
+    event.preventDefault();
+    let obj={
+      studentName:form.name.value,
+      studentBatch:form.batch.value,
+      courseType:form.type.value,
+      studentCode:form.student_code.value,
+      studentUnit:form.unit.value,
+      studentSprint:form.sprint.value,
+      studentScore:+form.score.value,
+    }
+    //console.log(obj);
+     dataArr.push(obj); 
+     Display(dataArr);
+  })
+function Display(dataArr){
+   reports.innerHTML=null;
+dataArr.forEach(function(elem,index){
+
+  let card=document.createElement("div");
+let studentName=document.createElement("h1");
+name.innertext=elem.name;
+
+let studentBatch=document.createElement("p");
+studentBatch=elem.studentBatch;
+
+let courseType=document.createElement("p");
+courseType.innerText=elem.courseType;
+
+let studentCode=document.createElement("p");
+studentCode.innerText=elem.studentCode;
+
+let studentUnit=document.createElement("p");
+studentUnit.innerText=elem.studentUnit;
+
+let studentSprint=document.createElement("p");
+studentSprint.innerText=elem.studentSprint;
+
+let studentScore=document.createElement("p");
+studentScore.innerText=elem.studentScore;
+
+let resultEle= document.createElement("h3");
+let resultArr=Result(elem.studentScore);
+resultEle.innerText=resultArr[0];
+resultEle.style.color=resultArr[1];
+
+let deleteBtn=document.createElement("button");
+deleteBtn.innerText="Delete" 
+deleteBtn.addEventListener("click",function(){
+  DeleteCard(dataArr,index);
+});
+
+card.append(studentName,studentBatch,courseType,studentCode,studentUnit,studentSprint,studentScore, resultEle,deleteBtn); 
+reports.append(card);
+})
+}
+function Result(score){
+  console.log( typeof (score),score)
+if(score<=3){
+  return ["Learning","red"];
+}else if(score<=7){
+  return ["Achiveing","orange"];
+}else{
+  return ["Mastery","green"];
+}
+}
+
+function DeleteCard(arr,index){
+dataArr=dataArr.filter(function(el,i){
+  return i!=index;
+});
+Display(dataArr);
+}
+</script>
+

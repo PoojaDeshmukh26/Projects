@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-2 Assignmnt</title>
+    <style>
+      #nav {
+        display: flex;
+        justify-content: right;
+        gap: 30px;
+        margin-right: 50px;
+        width: 100%;
+        background-color: aliceblue;
+        align-items: center;
+      }
+      #account {
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        display: none;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        background-color: rgb(60, 51, 245);
+        color: white;
+        border-radius: 5px;
+        border: none;
+      }
+      #form {
+        border: 1px solid rgb(8, 8, 8);
+        width: 30%;
+        margin: auto;
+        height: auto;
+        flex-wrap: nowrap;
+      }
+      #name {
+        height: auto;
+        width: 90%;
+        margin-top: 5px;
+        padding: 5px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+      }
+      #email {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+      }
+      #password {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-left: 10px;
+        margin-bottom: 15px;
+      }
+      #submit {
+        margin-left: 45%;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div id="auth">
+        <button id="signupBtn">Signup</button>
+        <button id="signinBtn">Signin</button>
+      </div>
+      <div id="account"></div>
+    </div>
+    <div id="form">
+      <form>
+        <input type="text" id="name" placeholder="Enter name" />
+        <input type="text" id="email" placeholder="Enter email" />
+        <input type="text" id="password" placeholder="Enter password" />
+        <input type="submit" id="submit" value="submit" />
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  let signupForm = `<form>
+        <input type="text" id="name" placeholder="Enter name" />
+        <input type="text" id="email" placeholder="Enter email" />
+        <input type="text" id="password" placeholder="Enter password" />
+        <input type="submit" id="submit" value="submit" />
+      </form>`;
+  let signinForm = `
+      <form>
+        <input type="text" id="email" placeholder="Enter email" />
+        <input type="text" id="password" placeholder="Enter password" />
+        <input type="submit" id="submit" value="submit" />
+      </form>`;
+
+  let formState = "signup";
+
+  let signinState = false;
+  let formDiv = document.getElementsByTagName("form");
+  console.log(form)
+let signupData={
+    name:formDiv.name.value,
+    email:formDiv.email.value,
+    password:formDiv.password.value
+}
+
+  
+
+  let buttons = document.querySelectorAll("button");
+
+  let auth=document.getElementById("auth");
+
+  let account=document.getElementById("account")
+
+  buttons[0].addEventListener("click", function () {
+   console.log("hii")
+    renderDOM("signup");
+  });
+
+  buttons[1].addEventListener("click", function () {
+    console.log("hii")  
+    renderDOM("signin");
+  });
+
+  function renderAccount(){
+  if(state=== true){
+  account.style.display="block"
+  account.innerText=signupData.name[0];
+  auth.style.display="none";
+  }else{
+    account.style.display="none";
+    auth.style.display="block";
+  }
+  }
+
+  function renderDOM(state) {
+    if (state === "signup") {
+      formDiv.innerHTML = signupForm;
+    } else {
+      formDiv.innerHTML = signinForm;
+    }
+  }
+</script>

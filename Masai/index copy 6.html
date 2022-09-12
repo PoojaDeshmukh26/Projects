@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+    .container{
+       display: flex;
+      
+     }
+     .container>div{
+        display: flex;
+        gap: 15px;
+        margin: auto;
+        height: auto;
+        /* border: 1px solid red; */
+     }
+     .item1{
+        width: 50%;
+        line-height: 150%;
+        
+     }
+     .item1>div{
+     margin-top: 0px;
+        margin-left: 50px;
+     }
+
+     .item2{
+        width: 50%;
+        /* border: 1px solid red; */
+     }
+     .item2>div{
+         display: grid;
+        flex-wrap: wrap; 
+        gap: 5px;
+        width: 100%;
+        /* border: 1px solid blue; */
+         grid-template-columns: repeat(3,1fr);
+        
+     }
+     img{
+        width: 100%;
+     }
+
+     @media only screen and (max-width:900px){
+      .item2>div{
+         grid-template-columns: repeat(2,1fr);
+         grid-template-rows: repeat(5,100px);
+         gap:5px
+      }
+      @media only screen and (min-width:500px){
+         .item1{
+            grid-area: 1/1/2/11;
+         }
+         .item2>div{
+         grid-template-columns: repeat(2,1fr);
+         grid-template-rows: repeat(5,100px);
+         gap:5px
+      }
+      
+      
+     }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="item1">
+            <div>
+            <div>
+                <h2>Your favorite cannel are oll in one place</h2>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum dicta velit facilis magnam cumque nisi. Beatae fugit doloribus quibusdam iusto sit non corrupti, quaerat possimus obcaecati neque totam voluptate at ea earum ipsa facilis dolor sunt. Magnam est consectetur sit, quae aspernatur enim suscipit distinctio nobis sequi laudantium deleniti?</p>
+            </div>
+        </div>
+        </div>
+        <div class="item2">
+           <div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+             <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%203.55.50%20PM_100116.png" alt="">
+             </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

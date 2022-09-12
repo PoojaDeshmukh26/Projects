@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+
+
+
+    <input id="first" placeholder="Enter num 1">
+    <input id="second" placeholder="Enter num 2">
+    <hr>
+
+    <button onclick="add()">Addition</button>
+    <button onclick="sub()">subtraction</button>
+    <button onclick="mul()">multiplication</button>
+    <button onclick="div()">division</button>
+    <hr>
+    <input id="answer">
+
+
+</body>
+
+</html>
+
+<script>
+    function add() {
+        var numOne, numTwo;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        result = numOne + numTwo;
+        document.getElementById("answer").value = result;
+    }
+
+    function sub() {
+        var numOne, numTwo;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        result = numOne - numTwo;
+        document.getElementById("answer").value = result;
+    }
+
+    function mul() {
+        var numOne, numTwo;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        result = numOne * numTwo;
+        document.getElementById("answer").value = result;
+    }
+
+    function div() {
+        var numOne, numTwo;
+        numOne = parseInt(document.getElementById("first").value);
+        numTwo = parseInt(document.getElementById("second").value);
+        result = numOne / numTwo;
+        document.getElementById("answer").value = result;
+    }
+</script>

@@ -1,0 +1,61 @@
+/* Write all the necessery css  */
+#create{
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width:25% ;
+    height:auto ;
+    margin :auto;
+}
+#name{
+    height: auto;
+    width: 100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
+#category{
+    height: auto;
+    width: 100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
+#brand{
+    height:auto;
+    width: 100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
+#price{
+    height: auto;
+    width: 100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
+#deliveredBy{
+    height: auto;
+    width: 100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
+#total-price{
+    text-align: center;
+}
+table{
+    background-color: yellow;
+    text-align: center;
+    margin:auto;
+    margin-top: 15px;
+    width: 50%;
+    border-collapse: collapse;
+}
+table td,table th{
+    border:1px solid black;
+    padding:5px;
+    text-align: center;
+    background-color: pink;
+
+}
+*{
+    box-sizing: border-box;
+}

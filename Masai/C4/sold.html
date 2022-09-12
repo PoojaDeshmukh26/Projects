@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admitted Students</title>
+    <style>
+      #navbar>a{
+     text-decoration: none;
+   }
+   table th{
+     
+     background-color: rgb(248, 229, 118);
+   
+   }
+   </style>
+</head>
+<body>
+  <div id="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./sold.html">Sold</a>
+    <a href="./rejected.html">Rejected</a>
+  </div>
+  <input placeholder="Search" type="text" id="search" />
+    <select id="filter">
+      <option value="">Select Category</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Grocery">Grocery</option>
+      <option value="Books">Books</option>
+    </select>
+    <select  id="sort">
+      <option value="">Sort By Review</option>
+      <option value="High-Low">High To Low</option>
+      <option value="Low-High">Low To High</option>
+    </select>
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Listed Site</th>
+        <th>Brand</th>
+        <th>Reviews</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Append Your date here  -->
+    </tbody>
+  </table>
+</body>
+</html>
+<script>
+  let tbody=document.querySelector("tbody");
+  let data=JSON.parse(localStorage.getItem("data"))||[];
+  data.map((el,i)=>{
+let row=document.createElement("tr");
+let name=document.createElement("td");
+name.innerText=el.name;
+
+let price=document.createElement("td");
+price.innerText=el.price;
+
+let category=document.createElement("td");
+category.innerText=el.category;
+
+let listed=document.createElement("td");
+listed.innerText=el.listed;
+
+let brand=document.createElement("td");
+brand.innerText=el.brand;
+
+let reviews=document.createElement("td");
+reviews.innerText=el.reviews;
+
+
+row.append(name,price,category,listed,brand,reviews);
+tbody.append(row);
+  })
+</script>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-111 C1</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #cfd8dc;
+        }
+        #container>h2,p{
+         text-align: center;
+         line-height: 160%;
+         
+        }
+        #banner{
+           display: flex;
+           /* border: 1px solid red; */
+           margin: auto;
+           width: 80%;
+         }
+        #banner>div>h2,div{
+            margin-left:40px;
+            margin-top: 5px;
+        }
+        #banner>div>p{
+            margin-left:30px;
+        }
+        #banner>div>button{
+         background-color: rgb(242, 150, 84);
+         color: white;
+         border-radius: 3px;
+         border: none;
+         padding: 2px;
+         margin-left:40px;
+        }
+        #banner>div>button+button{
+            background-color:white;
+            color:rgb(214, 117, 48);
+            border:1px solid rgb(214, 117, 48)
+        }
+         #banner>div>img{
+           width: 100%;
+         }
+         #container>h4{
+          text-align: center;
+          margin-top: 10px;
+         }
+         #services{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin: auto;
+            /* border: 1px solid red; */
+            width: 80%;
+            gap: 5px;
+            margin-top: 30px;
+         }
+         
+         #container>h3{
+            text-align: center;
+            margin-top: 50px;
+         }
+         #more{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin: auto;
+            width: 80%;
+            gap: 15px 0px
+         }
+         #more>div{
+            background-color: white;
+            padding: 5px;
+         }
+        @media only screen and (max-width: 800px) {
+            /* medium screen sizes  */
+           
+
+
+            #container>h4{
+          text-align: center;
+          margin-top: 10px;
+         }
+         #services{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(3,100px);
+            margin: auto;
+            /* border: 1px solid red; */
+            width: 80%;
+            gap: 5px;
+            margin-top: 30px;
+         }
+         
+
+        }
+        #container>h3{
+            text-align: center;
+            margin-top: 50px;
+         }
+         #more{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin: auto;
+            width: 80%;
+            gap: 15px 0px
+         }
+         #more>div{
+            background-color: white;
+            padding: 5px;
+         }
+        @media only screen and (max-width: 450px) {
+            /* Smaller screen sizes  */
+            #banner{
+           /* display: flex; */
+           /* border: 1px solid red; */
+           margin: auto;
+           width: 80%;
+         }
+        #banner>div>h2,div{
+            margin-left:40px;
+            margin-top: 5px;
+        }
+        #banner>div>p{
+            margin-left:30px;
+        }
+        #banner>div>button{
+         background-color: rgb(242, 150, 84);
+         color: white;
+         border-radius: 3px;
+         border: none;
+         padding: 2px;
+         margin-left:40px;
+        }
+        #banner>div>button+button{
+            background-color:white;
+            color:rgb(214, 117, 48);
+            border:1px solid rgb(214, 117, 48)
+        }
+         #banner>div>img{
+           width: 100%;
+         }
+           
+           
+            #container>h4{
+          text-align: center;
+          margin-top: 10px;
+         }
+         #services{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(6,100px);
+            margin: auto;
+            /* border: 1px solid red; */
+            width: 80%;
+            gap: 5px;
+            margin-top: 30px;
+         }
+         
+
+            #container>h3{
+            text-align: center;
+            margin-top: 50px;
+         }
+         #more{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(6,50px);
+            margin: auto;
+            width: 90%;
+            gap: 15px 0px
+         }
+         #more>div{
+            background-color: white;
+            padding: 5px;
+         }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Build a Website with ease</h2>
+        <p>So You Focus on what matters</p>
+        <div id="banner">
+            <!-- Two divs should go inside -->
+            <div>
+                <h2>Marketers</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat facere culpa officia recusandae quam molestiae, doloremque quidem, consequuntur dolor cum provident a aut ducimus pariatur vel ipsa debitis ex! Aliquid molestias distinctio sunt!</p>
+                <button>Get Started Free</button>
+                <button>Get a demo</button>
+            </div>
+            <div>
+                <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-28/Screenshot%202022-07-28%20at%2010.41.35%20AM_921859.png" alt="">
+            </div>
+        </div>
+        <h4>Features that make this possible:</h4>
+        <div id="services">
+            <!-- 6 divs should go inside -->
+            <div>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+            </div>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+            <h2>SEO recommendations</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic amet sequi, facere necessitatibus laudantium odit minima similique, sapiente, nemo dolore impedit!</h3>
+        </div>
+        <h3>But wait there is more...</h3>
+        <div id="more">
+            <!-- 6 divs should go inside -->
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+            <div>
+                <h2>> Multi-Language Content Creation</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

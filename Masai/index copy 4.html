@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* border: 1px solid red; */
+        margin: auto;
+        width: 90%;
+        gap: 15px;
+        
+      }
+      #item1 > img {
+        /* border: 1px solid blue; */
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #item2 > div {
+        display:grid;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        height:80%;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #item2 > div > div > img {
+        width: 100%;
+        /* border:1px solid red */
+        display: block;
+      }
+      #item3 > div {
+        /* border: 1px solid blue; */
+        display:grid;
+        
+        justify-content: space-evenly;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        height:30%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #item3 > div > div > img {
+        width: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="item1">
+        <img
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%2012.47.22%20PM_726462.png"
+          alt=""
+        />
+      </div>
+      <div id="item2">
+        <h5>Shop By Catagory</h5>
+        <div>
+          <div>
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/2020/PC/Fresh._SY232_CB431401553_.jpg"
+              alt=""
+            />
+            <h6>Fresh</h6>
+          </div>
+          <div>
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/2020/PC/Fresh._SY232_CB431401553_.jpg"
+              alt=""
+            />
+            <h6>Mobiles</h6>
+          </div>
+          <div>
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/2020/PC/Fresh._SY232_CB431401553_.jpg"
+              alt=""
+            />
+            <h6>Fashion</h6>
+            <h6>See More</h6>
+          </div>
+          <div>
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/2020/PC/Fresh._SY232_CB431401553_.jpg"
+              alt=""
+            />
+            <h6>Electronics</h6>
+          </div>
+          
+        </div>
+      </div>
+      <div id="item3">
+        <h5>Up to 70% off| Style for Men</h5>
+        <div>
+          <div>
+            <img
+              src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%2012.50.17%20PM_782202.png"
+              alt=""
+            />
+            <h6>Clothing</h6>
+          </div>
+          <div>
+            <img
+              src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%2012.50.17%20PM_782202.png"
+              alt=""
+            />
+            <h6>Footwear</h6>
+          </div>
+          <div>
+            <img
+              src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%2012.50.17%20PM_782202.png"
+              alt=""
+            />
+            <h6>Watches</h6>
+            <h6>End of the sale</h6>
+          </div>
+          <div>
+            <img
+              src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/Screenshot%202022-07-20%20at%2012.50.17%20PM_782202.png"
+              alt=""
+            />
+            <h6>Bags & Luggage</h6>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

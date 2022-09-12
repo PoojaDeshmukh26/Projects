@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #nav>div{
+            display: flex;
+           align-items: center;
+           gap: 50px;
+        }
+        #nav>div>img{
+            width: 40px;
+            height: 40px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 5px;
+            border-radius: 5px;
+            /* border: 1px solid red; */
+            display: none;
+        }
+        #slider{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(136, 7, 228);
+            color: white;
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+        
+        @media only screen and (max-width:500px){
+            .humBurgerImg>img{
+                display: block;
+            }
+            #nav>div{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="nav">
+        
+        <img src="https://designshift.in/assets/img/designshift-logo.svg" alt="">
+        
+        <div clase="option">
+            <h3>Full-Time Program</h3>
+            <h3>Part-Time Program</h3>
+            <h3>Fees & ISA</h3>
+            <h3>FAQ</h3>
+        </div>
+         <div class="humBurgerImg">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-20/burger-removebg-preview_922385.png" alt="">
+         </div>
+    </div>
+    <div id="slider">
+     <button id="close">X</button>
+    </div>
+</body>
+</html>
+<script>
+ let humburgerImg=document.querySelector(".humburgerImg");
+ let slider=document.getElementById("slider");
+ let close=document.getElementById("close");
+humburgerImg.addEventListener("click",function(){
+slider.style.display="block";
+});
+
+close.addEventListener("click",function(){
+slider.style.display="none";
+});
+</script>

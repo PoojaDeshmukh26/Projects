@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+     .container{
+      display: grid;
+      grid-template-columns: repeat(10,1fr);
+      /* grid-auto-rows: 200px; */
+      gap: 15px;
+      margin: auto;
+      width: 90%;
+      }
+      .container>div{
+        /* border: 1px solid red; */
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .container>div:nth-child(1){
+      grid-area: 1/1/2/8;
+      }
+      .container>div:nth-child(2){
+        grid-area: 1/8/2/11;
+    }
+    .container>div:nth-child(3){
+        grid-area: 2/1/3/6;
+    }
+    .container>div:nth-child(4){
+        grid-area: 2/6/3/11;
+    }
+    img{
+        width: 100%;
+    }
+    .opinion>div{
+        width: 100%;
+        /* border :1px solid blue */
+    }
+    .opinion>div>div{
+        display: flex;
+        /* border :1px solid red */
+    }
+    .editor>div{
+        width: 100%;
+        /* border :1px solid blue */
+    }
+    .editor>div>div{
+        display: flex;
+    }
+
+    .editor>div>div>div:nth-child(1){
+       width:30% ;
+    }
+    .editor>div>div>div:nth-child(2){
+        width:70% ;
+    }
+    @media only screen and (max-width:900px){
+        .container>div:nth-child(1){
+             grid-area: 1/1/2/11;
+        }
+        .container>div:nth-child(2){
+            grid-area: 2/1/3/6;
+        }
+        .container>div:nth-child(3){
+            grid-area: 2/6/3/11;
+        }
+        .container>div:nth-child(4){
+            grid-area: 3/1/4/11;
+        }
+    }
+    @media only screen and (max-width:500px){
+        .container>div:nth-child(1){
+             grid-area: 1/1/2/11;
+        }
+        .container>div:nth-child(2){
+            grid-area: 2/1/3/11;
+        }
+        .container>div:nth-child(3){
+            grid-area: 3/1/4/11;
+        }
+        .container>div:nth-child(4){
+            grid-area: 4/1/5/11;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div>
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%208.59.51%20AM_232535.png" alt="">
+    </div>
+    <div>
+        <h4>Top Stories</h4>
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.00.24%20AM_518931.png" alt="">
+    </div>
+    <div class="opinion">
+        <h4>Opinion</h4>
+        <div>
+            <div>
+                <div>
+                    <div>
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.01.24%20AM_703621.png" alt="">
+                  </div>
+                  <div>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam?</h4>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div></div>
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.01.24%20AM_703621.png" alt="">
+                  </div>
+                  <div>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam?</h4>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="editor">
+        <h4>Editor's Pic</h4>
+        <div>
+            <div>
+                <div>
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.00.56%20AM_293566.png" alt="">
+                </div>
+                <div>
+                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, optio!</h4>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.00.56%20AM_293566.png" alt="">
+                </div>
+                <div>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quasi!</h4>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-07-26/Screenshot%202022-07-26%20at%209.00.56%20AM_293566.png" alt="">
+                </div>
+                <div>
+                    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, consequuntur?</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+     </div>  
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-111 C2</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(250, 250, 250);
+      }
+      .form > h1 {
+        text-align: center;
+      }
+      .form {
+        margin: auto;
+        width: 30%;
+        height: auto;
+        gap: 20px;
+        flex-wrap: nowrap;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      #search {
+        margin-left: 45%;
+        margin-top: 30px;
+      }
+      #name {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      #category {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      #listed {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      #price {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      #addDate {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      #sold {
+        height: auto;
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      table {
+        margin: auto;
+        margin-top: 30px;
+      }
+      table th {
+        background-color: rgb(247, 193, 91);
+        text-align: center;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Add new Product</h1>
+      <form>
+        <input placeholder="Name" type="text" id="name" />
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Food">Food</option>
+        </select>
+        <select id="listed">
+          <option value="">Select Listed Site</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Flipkart">Flipkart</option>
+          <option value="Nykaa">Nykaa</option>
+        </select>
+        <input placeholder="Price" type="number" id="price" />
+        <input placeholder="Listing Date" type="date" id="addDate" />
+        <input placeholder="Has Sold" type="number" id="sold" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <input placeholder="Search" type="text" id="search" />
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Listed Site</th>
+          <th>Price</th>
+          <th>Listing Date</th>
+          <th>Sold Number</th>
+          <th>Total Revenue</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- all the data should be appended here  -->
+      </tbody>
+    </table>
+  </body>
+</html>
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit",myfunction(event));
+    myfunction(event){
+      eventpreventDefault()
+      let name=document.createElement("h3");
+      name.innerText=name.value;
+
+     
+    }
+    let obj = {
+      name: form.name.value,
+      category: form.category.value,
+      listed: form.listed.value,
+      price: form.price.value,
+      addDate: form.addDate.value,
+      sold: form.sold.value,
+    };
+
+
+    myfunction();
+    form.append(name, category, listed, price, addData, sold);
+  body.append(form);
+    document.querySelector("tbody").innerText = "";
+    let DataArr = [];
+
+   
+    console.log(obj);
+    DataArr.push(obj);
+    function DisplayTable() {
+      document.querySelector("tbody").innerHTML = " ";
+      console.log(obj.length);
+      DataArr.forEach(function (elem) {
+        let row = document.createElement("tr");
+
+        let name = document.createElement("td");
+        name.innerText = elem.name;
+
+        let category = document.createElement("td");
+        category.innerText = elem.category;
+
+        let listed = document.createElement("td");
+        listed.innerText = elem.listed;
+
+        let price = document.createElement("td");
+        price.innerText = elem.price;
+
+        let addDate = document.createElement("td");
+        addDate.innerText = elem.addDate;
+
+        let sold = document.createElement("td");
+        sold.innerText = elem.sold;
+        
+         let TotalRevenue=document.createElement("td");
+         TotalRevenue.innerText=elem.Price*elem.sold
+         let delet=ele.row.deleted;
+        row.append(name, category, listed, price, addData, sold ,TotalRevenue);
+        tbody.append(row);
+      });
+      
+    }
+</script>

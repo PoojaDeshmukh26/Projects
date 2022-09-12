@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enroll Student</title>
+    
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home Page</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./admitted.html">Admitted</a>
+      <a href="./rejected.html">Rejected</a>
+    </div>
+    <div class="form">
+      <h1>Enter Student Details</h1>
+      <form>
+        <input placeholder="Name" type="text" id="name" />
+        <input placeholder="Email" type="email" id="email" />
+        <input placeholder="Phone Number" type="number" id="phone" />
+        <input type="text" placeholder="Student Code" id="code" />
+        <input type="number" id="score" placeholder="Score" />
+        <select id="gender">
+          <option value="">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <select id="course">
+          <option value="">Course Name</option>
+          <option value="Web-Development">Web-Development</option>
+          <option value="Android-Development">Android-Development</option>
+          <option value="Data-Analitics">Data-Analitics</option>
+        </select>
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+
+document.querySelector("form").addEventListener("submit", myfunction);
+let Arr;
+if(localStorage.getItem("studentList")==null){
+ Arr=[];
+} else {
+ Arr=JSON.parse(localStorage.getItem("studentList"));
+}
+displayTable(Arr);
+
+function myfunction(event) {
+    event.preventDefault();
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let phone=document.querySelector("#phone").value;
+    let code=document.querySelector("#code").value;
+    let score=document.querySelector("#score").value;
+    let gender=document.querySelector("#gender").value;
+    let course=document.querySelector("#course").value;
+    let Obj = {
+        name: name,
+        email:email,
+        phone:phone,
+        code:code,
+        score:score,
+        gender:gender,
+        course:course
+        
+    };
+    Arr.push(Obj);
+    console.log(Obj)
+    localStorage.setItem("studentlist",JSON.stringify(Arr))
+    displayTable(Arr);
+}
+
+function displayTable() {
+    document.querySelector("tbody")
+    console.log(Arr.length);
+    
+    Arr.forEach(function (element,index) {
+        let row = document.createElement("tr");
+
+        let name = document.createElement("td");
+        name.innerText = element.name;
+
+        let email = document.createElement("td");
+        email.innerText = element.email;
+
+        let course = document.createElement("td");
+        sourse.innerText = element.sourse;
+
+        let gender = document.createElement("td");
+        gender.innerText = element.gender;
+
+        let phone = document.createElement("td");
+       phone.innerText = element.phone;
+
+       let admit = document.createElement("td");
+        admit.innerText = element.admit;
+        admit.addEventListener("click", function () {
+            deleteAdmit();
+
+        });
+        admit.style.color= "green";
+
+        let reject = document.createElement("td");
+        reject.innerText = "Reject";
+        reject.addEventListener("click", function () {
+            deleteReject();
+
+        });
+        reject.style.color = "red";
+        row.append(name,email,course,gender,phone,admit,reject);
+        document.querySelector("tbody").append(row);
+    });
+
+}
+function deleteAdmit(element,index) {
+    console.log(Arr);
+    Arr.splice(index,1)
+    localStorage.setItem("studentList",JSON.stringify(Arr));
+    displayTable(Arr)
+}
+
+function deleteRejcet(element,index) {
+    console.log(Arr);
+    Arr.splice(index,1)
+    localStorage.setItem("studentList",JSON.stringify(Arr));
+    displayTable(Arr)
+}
+
+</script>

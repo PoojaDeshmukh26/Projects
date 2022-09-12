@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Likes and Dislikes</title>
+    <style>
+        button{
+          background-color:yellow;
+          border:1px solid red;
+          color: black;
+          padding:10px 15px;
+          margin: 20px 30px;
+          font-size: 30px;
+          
+       }
+       p{
+        margin: 20px 30px;
+        font-weight: bold;
+        font-size: 30px;
+       }
+ </style>
+</head>
+<body>
+    <img src="https://www.readersdigest.ca/wp-content/uploads/2013/03/6-facts-to-know-before-owning-a-puppy.jpg" alt="puppy pic" />
+<div>
+    <p>likes :-<span id="likeCount">0</span></p>
+    <p>Dislike :-<span id="dislikeCount">0</span></p>
+</div>
+
+
+   <div>
+    <button>Like</button>
+    <button> Dislike </button>
+</div>
+</body>
+</html>
+
+<script>
+  let likeCount;
+  if (localStorage.getItem("puppyLike")==null){
+  likeCount=0;
+  }else{
+    likeCount=localStorage.getItem("puppyLike");
+  }
+
+  
+  let dislikeCount;
+  if (localStorage.getItem("puppyDislike")==null){
+  dislikeCount=0;
+  }else{
+    dislikeCount = localStorage.getItem("puppyDislike");
+  }
+
+ document.querySelector("div>button").addEventListener("click",likeFunc);
+
+  function likeFunc(){
+  likeCount++;
+  document.getElementById("likeCount").innerText=likeCount;
+localStorage.setItem("puppyLike",likeCount) 
+}
+ document.querySelector("button+button").addEventListener("click",dislikeFunc);
+
+
+  function dislikeFunc(){
+    dislikeCount++;
+    document.getElementById("dislikeCount").innerText=dislikeCount;
+localStorage.setItem("puppyDislike",dislikeCount) 
+  }
+
+    </script>

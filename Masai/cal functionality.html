@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+
+        }
+
+        #parent {
+            height: auto;
+            width: 400px;
+            box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 20px 0px;
+            border-radius: 20px;
+        }
+
+        #screen {
+            height: 60px;
+            width: 90%;
+            margin: auto;
+            margin-top: 40px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        #child {
+            height: auto;
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap: 20px
+        }
+
+        #child>div {
+            box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40%;
+
+        }
+
+        #cancel {
+            background-color: red;
+            color: white;
+
+        }
+
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="parent">
+        <div id="screen"></div>
+        <div id="child">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div id="cancel">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let keys = document.querySelectorAll("#child>div");
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", myCal);
+    }
+    let bag = "";
+    function myCal() {
+        let targetNumber = event.target.innerText;
+        if (targetNumber == "C") {
+
+            document.querySelector("#screen").innerText = "";
+            bag = "";
+        } else if (targetNumber == "=") {
+
+            console.log(eval(bag));
+            let res = eval(bag)
+            if (res == undefined) {
+                document.querySelector("#screen").innerText = "";
+
+            } else {
+                document.querySelector("#screen").innerText = res;
+            }
+
+
+        } else {
+            bag = bag + targetNumber;
+            document.querySelector("#screen").innerText = bag;
+        }
+    }
+</script>
+
+
+
+
+
